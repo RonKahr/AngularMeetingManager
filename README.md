@@ -50,10 +50,7 @@ Under Security>Logins, create a new login:
 <li>Expand the AngularMeetingManager database.</li>
 <li>In Security, select "New User".</li>
 <li>
-Select "SQL user with login" and input:
-  <div>User name: roomsuser</div>
-  <div>Login name: roomsuser</div>
-  <div>Default schema: dbo</div>
+Download and run the CreateDatabase.sql.  This contains the sql script to create the tables, stored procedures, and user account.
 </li>
 </ol>
 </div>
