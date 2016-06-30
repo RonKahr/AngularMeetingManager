@@ -1,0 +1,104 @@
+﻿body {
+    font-family:Calibri;
+    font-size:10pt;
+}
+
+.app-main{
+    width:800px;
+    margin-left:20px;
+}
+
+.app-header{
+    font-size:28pt;
+    border-bottom: 5px solid #000066;
+}
+
+.app-menu{
+    vertical-align:text-top;
+    border-right: 5px solid #000066;
+    width: 150px;
+    font-size:18pt;
+}
+
+th{
+    text-align:left;
+}
+
+.rooms-table{
+    width:400px;
+    margin-top:10px;
+    margin-bottom:10px;
+    font-size:10pt;
+}
+.rooms-view {
+    margin-left: 20px;
+        font-size:10pt;
+}
+
+.app-menu-items{
+    margin-left:20px;
+    margin-top:5px;
+}
+
+.app-menu-item{
+    margin-bottom:5px;
+}
+
+input[type=button] {
+  -webkit-border-radius: 10;
+  -moz-border-radius: 10;
+  border-radius: 15px;
+  font-family: Arial;
+  color: #ffffff;
+  font-size: 10pt;
+  background: #1b6394;
+  padding: 5px 10px 5px 10px;
+  text-decoration: none;
+}
+
+input[type=button]:hover {
+  background: #3cb0fd;
+  text-decoration: none;
+}
+
+.rooms-meetings-table{
+    width:600px;
+    margin-left:20px;
+        font-size:10pt;
+}
+
+.rooms-add-table{
+    width: 300px;
+    margin-left:20px
+}
+
+.rooms-add-modal .modal-dialog{
+    width: 400px;
+}
+
+.meetings-add-modal .modal-dialog {
+  width: 400px;
+}
+
+.meetings-add-table{
+    width: 300px;
+    margin-left:20px
+}
+
+.active{
+    background-color:lightblue;
+}
+
+.standard-hr{
+    border: 0;
+    height: 2px;
+    background-image: linear-gradient(to right, rgba(0, 0, 0, 0), rgba(0, 0, 0, 0.75), rgba(0, 0, 0, 0));
+}
+
+.rooms-edit{
+    margin-bottom:10px;
+}
+
+.rooms-meetings-header{
+    font-size: 14pt;
+}

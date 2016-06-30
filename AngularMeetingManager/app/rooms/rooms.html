@@ -1,0 +1,126 @@
+﻿<div class="rooms-view">
+<table class="rooms-table">
+    <tr>
+        <th>
+            Name
+        </th>
+        <th>
+            Floor
+        </th>
+        <th>
+            Capacity
+        </th>
+    </tr>
+    <tr ng-repeat="rm in rooms" ng-click="selectRoom(rm)" ng-class="{active : isSelected(rm)}">
+        <td>
+            {{rm.roomname}}
+        </td>
+        <td>
+            {{rm.floor}}
+        </td>
+        <td>
+            {{rm.capacity}}
+        </td>
+        <td>
+            <input type="button" ng-click="deleteRoom(rm)" value="Delete"/>
+        </td>
+    </tr>
+    <tr>
+        <td colspan="3"><input type="button" value="Add Room" ng-click="addRoom()" /></td>
+    </tr>
+</table>
+    <hr class="standard-hr" />
+<div class="rooms-edit">
+    <div>
+        Name: <input type="text" ng-model="selectedRoom.roomname" />
+    </div>
+    <div>
+        Floor: <input type="text" ng-model="selectedRoom.floor" />
+    </div>
+    <div>
+        Capacity: <input type="text" ng-model="selectedRoom.capacity">
+    </div>
+    <div>
+        <input type="button" value="Save" ng-click="updateRoom(selectedRoom)" />
+        <input type="button" value="Cancel" ng-click="cancelUpdateRoom()" />
+    </div>
+</div>
+    <hr class="standard-hr" />
+<div>
+    <div class="rooms-meetings-header">Meetings</div>
+    <table class="rooms-meetings-table">
+        <tr>
+            <th>Meeting</th>
+            <th>Start Time</th>
+            <th>End Time</th>
+            <th></th>
+        </tr>
+        <tr ng-repeat="meet in meetings | orderBy:'start'">
+            <td>
+                {{meet.title}}
+            </td>
+            <td>
+                {{meet.start | date:'short'}}
+            </td>
+            <td>
+                {{meet.end | date:'short'}}
+            </td>
+            <td>
+                <input type="button" ng-click="deleteMeeting(meet)" value="Delete"/>
+            </td>
+        </tr>
+        <tr>
+            <td>
+                <input type="button" ng-click="addMeeting(selectedRoom)" value="Add Meeting" />
+            </td>
+        </tr>
+    </table>
+</div>
+<script type="text/ng-template" id="myModalContent.html">
+    <div class="modal-header">
+        <h3 class="modal-title">Add A Room</h3>
+    </div>
+    <table class="rooms-add-table">
+        <tr>
+            <td>Name: </td>
+            <td><input type="text" ng-model="newRoom.roomname" /></td>
+        </tr>
+        <tr>
+            <td>Floor: </td>
+            <td><input type="text" ng-model="newRoom.floor" /></td>
+        </tr>
+        <tr>
+            <td>Capacity: </td>
+            <td><input type="text" ng-model="newRoom.capacity" /></td>
+        </tr>
+    </table>
+    <div class="modal-footer">
+        <button class="btn btn-primary" type="button" ng-click="ok()">OK</button>
+        <button class="btn btn-warning" type="button" ng-click="cancel()">Cancel</button>
+    </div>
+</script>
+
+<script type="text/ng-template" id="addMeetingModal.html">
+    <div class="modal-header">
+        <h3 class="modal-title">Add A Meeting</h3>
+    </div>
+    <table class="meetings-add-table">
+        <tr>
+            <td>Title: </td>
+            <td><input type="text" ng-model="newMeeting.title" /></td>
+        </tr>
+        <tr>
+            <td>Start: </td>
+            <td><input type="text" ng-model="newMeeting.start" /></td>
+        </tr>
+        <tr>
+            <td>End: </td>
+            <td><input type="text" ng-model="newMeeting.end" /></td>
+        <tr>
+    </table>
+    <div class="modal-footer">
+        <button class="btn btn-primary" type="button" ng-click="ok()">OK</button>
+        <button class="btn btn-warning" type="button" ng-click="cancel()">Cancel</button>
+    </div>
+</script>
+</div>
